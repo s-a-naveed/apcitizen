@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhar | Registration</title>
+    <link rel="stylesheet" href="{% static 'styles/register.css' %}">
+</head>
+<body>
+    <form action="" method="post" novalidate>
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class=" {{message.tags}} "{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {% csrf_token %}
+        <h1>Aadhar Registration</h1>
+        {{fm.as_p}}
+        <input type="submit" value="Register">
+
+        <div class="links-container">
+            <span>I am a Registered citizen <a href="{% url 'home' %}"> Vote here</a></span> 
+            <span>I'm not a voter <a href="{% url 'voterregister' %}"> Voter Registration</a></span>
+            <span>Know your Aadhar <a href="{% url 'getaadhar' %}"> here</a></span> 
+        </div>
+        <a href="{% url 'home' %}" class='home'>Back To Home</a>
+    </form>
+</body>
+</html>

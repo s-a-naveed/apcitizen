@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoterRegister</title>
+    <link rel="stylesheet" href="{% static 'styles/voterregister.css' %}">
+</head>
+<body>
+    <form action="" method="post" novalidate>
+        <h1>Register as voter</h1>
+        {% csrf_token %}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class=" {{message.tags}} "{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        {{form.as_p}}
+        <input type="submit" value="Register">
+        {% comment %} <a href="{% url 'login' %}">Login</a> {% endcomment %}
+        <br>
+        Don't have an aadhar? <a href="{% url 'aadharregister' %}">here</a> <br> <br>
+        <a href="{% url 'home' %}" class='gotohome'>Back To Home</a>
+    </form>
+</body>
+</html>

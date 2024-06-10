@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote For MP</title>
+    <link rel="stylesheet" href="{% static 'styles/voteformlaandmp.css' %}">
+</head>
+<body>
+    <header>
+        {% comment %} <img src="{% static 'images/1.jpg' %}" alt="Election commisioners"> {% endcomment %}
+        <h1>Vote For Parliment Elections</h1>
+    </header>
+        <form action="" method="post">
+            {% csrf_token %}
+        {{form.aadhar_number.label}} {{form.aadhar_number}} <input type="submit" value="Let me vote"> <br> <br>
+        {{form.options.label}} {{form.options}}
+        <input type="submit" value="Take me to my constituency">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class=" {{message.tags}} "{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <div id="members">
+                {% if candidates %}
+                <table>
+                    <thead>
+                        <th class='name'><p><b>MP  NAME</b></p></th>
+                        <th class='party'><p><b>PARTY</b></p></th>
+                    </thead>
+                    <tbody>
+                        {% for name, party in candidates %}
+                        <tr>
+                            <td>
+                                <label for="{{name}}">
+                                    <input type="radio" name="mp" id="{{name}}" value="{{name}}"> {{name}}
+                                </label>
+                            </td>
+                            <td><b>{{party}}</b></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                {% endif %}
+                <div class="button-container">
+                    <input type="submit" value="Save my vote" class='save'> <a href="{% url 'voteformla' %}" class='votefor'>Vote For MLA</a>
+                    <a href="{% url 'home' %}" class='home'>Back to home</a>
+                </div>
+            </div>
+</body>
+</html>

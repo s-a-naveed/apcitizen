@@ -1,0 +1,113 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-position: center;
+    background-size: cover;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: rgb(4, 0, 255);
+    font-size: 2.5em; /* Adjust font size for responsiveness */
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-around; /* Adjust spacing between items */
+    align-items: center; /* Aligns items vertically in the center */
+    background-position: center;
+}
+
+#tdpl, #pspk {
+    max-width: 100%; /* Ensure image doesn't exceed its container */
+    height: auto; /* Maintain aspect ratio */
+    /* padding: 20% 0% 0% 0%; */
+}
+
+#tdpl {
+    height: 250px; /* Maintain initial aspect ratio */
+    margin: 1.8% 0% 0% 5%; /* Center the image */
+}
+
+#pspk {
+    height: 150px; /* Maintain initial aspect ratio */
+    margin: 8.5% 0% 0% 11%; /* Center the image */
+}
+
+nav {
+    text-align: center;
+    margin-top: 20px;
+    white-space: nowrap; /* Ensure buttons stay in one line */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2em; /* Adjust font size for responsiveness */
+    margin: 0 3%; /* Adjust the horizontal gap */
+    padding: 1% 2%; /* Add padding to create button-like appearance */
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s;
+    display: inline-block; /* Ensure inline display */
+}
+
+nav a:hover {
+    background-color: #ccc;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header-container {
+        justify-content: space-between; /* Adjust spacing between items */
+        padding: 0%; /* Adjust padding for smaller screens */
+        height: 180px;
+    }
+
+    #tdpl, #pspk {
+        height: 150px;
+        padding: 9% 0% 0% 0%;
+        width: 34%; /* Adjust image width for smaller screens */
+        margin: 1px; /* Add margin for spacing */
+    }
+
+    h1 {
+        font-size: 2em; /* Adjust font size for smaller screens */
+    }
+
+    nav a {
+        font-size: 1em; /* Adjust font size for smaller screens */
+        margin: 0 3px; /* Adjust the horizontal gap for smaller screens */
+        padding: 8px 15px; /* Adjust padding for smaller screens */
+        display: block; /* Change display to block for vertical stacking */
+        margin: 10px auto; /* Center-align vertically */
+        width: 80%; /* Adjust width for better appearance */
+    }
+
+    .about-paragraph {
+        font-size: 16px; /* Adjust font size for readability on smaller screens */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Styles for about-paragraph */
+.about-paragraph {
+    font-family: 'Georgia', serif; /* Sets an elegant and readable font */
+    font-size: 18px; /* Adjusts the font size for readability */
+    line-height: 1.6; /* Increases line height for better readability */
+    color: #333; /* Sets a dark grey color for the text */
+    background: linear-gradient(to top, #fbabab, #9df2ff); /* Adds a gradient background */
+    padding: 20px; /* Adds padding around the text */
+    border-radius: 10px; /* Rounds the corners of the paragraph box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow for depth */
+    max-width: 800px; /* Limits the maximum width of the paragraph */
+    margin: 20px auto; /* Centers the paragraph block */
+    text-align: justify; /* Justifies the text for neat alignment */
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'styles/homepage.css' %}" />
+    <style>
+      header {
+        background-image: url("static/images/bghome.jpg");
+      }
+
+      .header-container {
+        background-image: url("static/images/amaravati.jpg");
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Namaste, Welcome to A.P Citizenship Portal</h1>
+      <div class="header-container">
+        <img
+          src="{% static 'images/lokesh.png' %}"
+          alt="Nara Lokesh"
+          id="tdpl"
+        />
+        <img
+          src="{% static 'images/cbn.png' %}"
+          alt="ChandraBabu Naidu"
+          id="tdpl"
+        />
+        <img
+          src="{% static 'images/pspk.png' %}"
+          alt="Pawan Kalyan"
+          id="pspk"
+        />
+      </div>
+    </header>
+    <nav>
+      <a href="{% url 'aadharregister' %}"> Aadhar Register </a>
+      <a href="{% url 'getaadhar' %}"> Download Aadhar </a>
+      <a href="{% url 'voterregister' %}"> Voter Register </a>
+      <a href="{% url 'voteformla' %}">Vote For MLA</a>
+      <a href="{% url 'voteformp' %}">Vote For MP</a>
+    </nav>
+    <footer>
+      <p class="about-paragraph">
+        Andhra Pradesh, located on the southeastern coast of India, is renowned
+        for its rich cultural heritage and historical significance. The state,
+        with its capital at Amaravati, is the seventh-largest in India by area
+        and the tenth-most populous. Andhra Pradesh is known for its diverse
+        landscapes, from the lush Eastern Ghats to the extensive coastline along
+        the Bay of Bengal. The region boasts a vibrant tradition of classical
+        dance, music, and art, particularly the Kuchipudi dance form. Its
+        economy is driven by agriculture, information technology, and
+        biotechnology. Major cities like Visakhapatnam and Vijayawada are hubs
+        of economic activity. Andhra Pradesh is also home to historic sites like
+        the ancient Buddhist center at Amaravati and the architectural marvels
+        of the Vijayanagara Empire at Lepakshi. The state's cuisine, featuring
+        spicy dishes like biryani and seafood, reflects its coastal culture.
+        Festivals such as Sankranti and Ugadi are celebrated with great
+        enthusiasm, showcasing the state's rich cultural tapestry.
+      </p>
+    </footer>
+  </body>
+</html>

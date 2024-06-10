@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Aadhar</title>
+    <link rel="stylesheet" href="{% static 'styles\getaadhar.css' %}">
+</head>
+<body>
+    <form action="" method="post">
+        {{form.as_p}}
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                    <li {% if message.tags %} class=" {{message.tags}} "{% endif %}>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %} 
+        <input type="submit" value="Get Aadhar details" class='getaadhardet'> <br> <br>
+        {% csrf_token %}
+        <label for="Name">Full Name: </label> <span>{{aadhar.full_name}}</span> <br> <br>
+        <label for="FName">Father Name: </label> <span>{{aadhar.father_name}}</span> <br> <br>
+        <label for="phone">Phone Number: </label> <span>{{aadhar.phone_number}}</span> <br> <br>
+        <label for="aadhar">Aadhar Number:</label> <span>{{aadhar.aadhar_number}}</span> <br><br>
+
+        <a href="{% url 'voterregister' %}" class='voter'>Voter Registration</a> <br>
+        <a href="{% url 'getaadhar' %}" class='getanother'>Get Another Aadhar </a> <br> Don't have Aadhar? <a href="{% url 'aadharregister' %}" class='createaadhar'>Create here</a>
+    </form>
+</body>
+</html>
